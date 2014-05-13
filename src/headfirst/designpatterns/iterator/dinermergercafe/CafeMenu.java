@@ -3,7 +3,7 @@ package headfirst.designpatterns.iterator.dinermergercafe;
 import java.util.*;
 
 public class CafeMenu implements Menu {
-	Hashtable<String, MenuItem> menuItems = new Hashtable<String, MenuItem>();
+	HashMap<String, MenuItem> menuItems = new HashMap<String, MenuItem>();
   
 	public CafeMenu() {
 		addItem("Veggie Burger and Air Fries",
@@ -24,7 +24,7 @@ public class CafeMenu implements Menu {
 		menuItems.put(menuItem.getName(), menuItem);
 	}
  
-	public Hashtable<String, MenuItem> getItems() {
+	public Map<String, MenuItem> getItems() {
 		return menuItems;
 	}
   

@@ -10,10 +10,10 @@ public class PancakeHouseMenuIterator implements Iterator {
 		this.items = items;
 	}
  
-	public Object next() {
-		Object object = items.get(position);
+	public MenuItem next() {
+		MenuItem item = items.get(position);
 		position = position + 1;
-		return object;
+		return item;
 	}
  
 	public boolean hasNext() {

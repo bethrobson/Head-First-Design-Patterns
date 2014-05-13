@@ -2,7 +2,7 @@ package headfirst.designpatterns.iterator.dinermergercafe;
  
 import java.util.Iterator;
   
-public class DinerMenuIterator implements Iterator<Object> {
+public class DinerMenuIterator implements Iterator<MenuItem> {
 	MenuItem[] list;
 	int position = 0;
  
@@ -10,7 +10,7 @@ public class DinerMenuIterator implements Iterator<Object> {
 		this.list = list;
 	}
  
-	public Object next() {
+	public MenuItem next() {
 		MenuItem menuItem = list[position];
 		position = position + 1;
 		return menuItem;
@@ -23,7 +23,7 @@ public class DinerMenuIterator implements Iterator<Object> {
 			return true;
 		}
 	}
-  
+
 	public void remove() {
 		if (position <= 0) {
 			throw new IllegalStateException
@@ -36,4 +36,5 @@ public class DinerMenuIterator implements Iterator<Object> {
 			list[list.length-1] = null;
 		}
 	}
+
 }

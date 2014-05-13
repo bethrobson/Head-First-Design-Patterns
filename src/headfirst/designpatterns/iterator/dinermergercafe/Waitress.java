@@ -14,9 +14,9 @@ public class Waitress {
 	}
  
 	public void printMenu() {
-		Iterator<?> pancakeIterator = pancakeHouseMenu.createIterator();
-		Iterator<?> dinerIterator = dinerMenu.createIterator();
-		Iterator<?> cafeIterator = cafeMenu.createIterator();
+		Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+		Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
+		Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
 
 		System.out.println("MENU\n----\nBREAKFAST");
 		printMenu(pancakeIterator);
@@ -26,9 +26,9 @@ public class Waitress {
 		printMenu(cafeIterator);
 	}
  
-	private void printMenu(Iterator<?> iterator) {
+	private void printMenu(Iterator<MenuItem> iterator) {
 		while (iterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)iterator.next();
+			MenuItem menuItem = iterator.next();
 			System.out.print(menuItem.getName() + ", ");
 			System.out.print(menuItem.getPrice() + " -- ");
 			System.out.println(menuItem.getDescription());
@@ -43,15 +43,15 @@ public class Waitress {
 	}
  
 	public boolean isItemVegetarian(String name) {
-		Iterator<?> pancakeIterator = pancakeHouseMenu.createIterator();
+		Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
 		if (isVegetarian(name, pancakeIterator)) {
 			return true;
 		}
-		Iterator<?> dinerIterator = dinerMenu.createIterator();
+		Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
 		if (isVegetarian(name, dinerIterator)) {
 			return true;
 		}
-		Iterator<?> cafeIterator = cafeMenu.createIterator();
+		Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
 		if (isVegetarian(name, cafeIterator)) {
 			return true;
 		}
@@ -59,9 +59,9 @@ public class Waitress {
 	}
 
 
-	private void printVegetarianMenu(Iterator<?> iterator) {
+	private void printVegetarianMenu(Iterator<MenuItem> iterator) {
 		while (iterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)iterator.next();
+			MenuItem menuItem = iterator.next();
 			if (menuItem.isVegetarian()) {
 				System.out.print(menuItem.getName() + ", ");
 				System.out.print(menuItem.getPrice() + " -- ");
@@ -70,9 +70,9 @@ public class Waitress {
 		}
 	}
 
-	private boolean isVegetarian(String name, Iterator<?> iterator) {
+	private boolean isVegetarian(String name, Iterator<MenuItem> iterator) {
 		while (iterator.hasNext()) {
-			MenuItem menuItem = (MenuItem)iterator.next();
+			MenuItem menuItem = iterator.next();
 			if (menuItem.getName().equals(name)) {
 				if (menuItem.isVegetarian()) {
 					return true;

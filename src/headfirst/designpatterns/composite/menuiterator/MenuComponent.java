@@ -27,7 +27,7 @@ public abstract class MenuComponent {
 		throw new UnsupportedOperationException();
 	}
 
-	public abstract Iterator<?> createIterator();
+	public abstract Iterator<MenuComponent> createIterator();
  
 	public void print() {
 		throw new UnsupportedOperationException();

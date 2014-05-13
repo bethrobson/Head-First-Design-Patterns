@@ -17,6 +17,9 @@ public class MenuTestDrive {
 		
 	}
 	
+	/*
+	 * Without the Waitress, we need the code below...
+	 */
 	public static void printMenu() {
 		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		DinerMenu dinerMenu = new DinerMenu();

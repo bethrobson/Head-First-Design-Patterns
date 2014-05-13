@@ -2,17 +2,17 @@ package headfirst.designpatterns.composite.menuiterator;
 
 import java.util.*;
   
-public class CompositeIterator implements Iterator<Object> {
-	Stack<Iterator<?>> stack = new Stack<Iterator<?>>();
+public class CompositeIterator implements Iterator<MenuComponent> {
+	Stack<Iterator<MenuComponent>> stack = new Stack<Iterator<MenuComponent>>();
    
-	public CompositeIterator(Iterator<?> iterator) {
+	public CompositeIterator(Iterator<MenuComponent> iterator) {
 		stack.push(iterator);
 	}
    
-	public Object next() {
+	public MenuComponent next() {
 		if (hasNext()) {
-			Iterator<?> iterator = (Iterator<?>) stack.peek();
-			MenuComponent component = (MenuComponent) iterator.next();
+			Iterator<MenuComponent> iterator = stack.peek();
+			MenuComponent component = iterator.next();
 			stack.push(component.createIterator());
 			return component;
 		} else {
@@ -24,7 +24,7 @@ public class CompositeIterator implements Iterator<Object> {
 		if (stack.empty()) {
 			return false;
 		} else {
-			Iterator<?> iterator = (Iterator<?>) stack.peek();
+			Iterator<MenuComponent> iterator = stack.peek();
 			if (!iterator.hasNext()) {
 				stack.pop();
 				return hasNext();
@@ -33,10 +33,17 @@ public class CompositeIterator implements Iterator<Object> {
 			}
 		}
 	}
-   
+	
+	/*
+	 * No longer needed as of Java 8
+	 * 
+	 * (non-Javadoc)
+	 * @see java.util.Iterator#remove()
+	 *
 	public void remove() {
 		throw new UnsupportedOperationException();
 	}
+	*/
 }
 
 

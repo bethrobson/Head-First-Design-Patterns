@@ -36,7 +36,7 @@ public class MenuItem extends MenuComponent {
 		return vegetarian;
 	}
 
-	public Iterator<?> createIterator() {
+	public Iterator<MenuComponent> createIterator() {
 		return new NullIterator();
 	}
  
