@@ -13,7 +13,7 @@ public class Flock implements Quackable {
 	public void quack() {
 		Iterator<Quackable> iterator = quackers.iterator();
 		while (iterator.hasNext()) {
-			Quackable quacker = (Quackable)iterator.next();
+			Quackable quacker = iterator.next();
 			quacker.quack();
 		}
 	}
