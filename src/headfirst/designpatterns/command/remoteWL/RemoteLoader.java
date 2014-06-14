@@ -19,7 +19,7 @@ public class RemoteLoader {
 			stereo.on(); stereo.setCD(); stereo.setVolume(11);
 		};
 		remoteControl.setCommand(3, stereoOnWithCD, stereo::off);
-		remoteControl.setCommand(3, garageDoor::up, garageDoor::down);
+		remoteControl.setCommand(4, garageDoor::up, garageDoor::down);
   
 		System.out.println(remoteControl);
  
@@ -31,6 +31,8 @@ public class RemoteLoader {
 		remoteControl.offButtonWasPushed(2);
 		remoteControl.onButtonWasPushed(3);
 		remoteControl.offButtonWasPushed(3);
-		remoteControl.onButtonWasPushed(4);  // NoCommand
+		remoteControl.onButtonWasPushed(4);  
+		remoteControl.offButtonWasPushed(4);
+		remoteControl.onButtonWasPushed(5);
 	}
 }
