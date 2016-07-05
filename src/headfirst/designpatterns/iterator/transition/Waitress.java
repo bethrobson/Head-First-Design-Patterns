@@ -3,10 +3,10 @@ import java.util.*;
   
      
 public class Waitress {
-	ArrayList<MenuItem> menus;
+	ArrayList<Menu> menus;
      
   
-	public Waitress(ArrayList<MenuItem> menus) {
+	public Waitress(ArrayList<Menu> menus) {
 		this.menus = menus;
 	}
    
