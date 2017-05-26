@@ -13,10 +13,7 @@ public class Duck implements Comparable<Duck> {
 		return name + " weighs " + weight;
 	}
   
-	public int compareTo(Duck object) {
- 
-		Duck otherDuck = object;
-  
+	public int compareTo(Duck otherDuck) {
 		if (this.weight < otherDuck.weight) {
 			return -1;
 		} else if (this.weight == otherDuck.weight) {
