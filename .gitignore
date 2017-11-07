@@ -1,0 +1,15 @@
+info.txt
+
+/bin/
+/target/
+
+### Eclipse ###
+.classpath
+.project
+.settings
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
