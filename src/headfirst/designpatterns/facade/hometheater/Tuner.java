@@ -7,6 +7,7 @@ public class Tuner {
 
 	public Tuner(String description, Amplifier amplifier) {
 		this.description = description;
+	        this.amplifier = amplifier;
 	}
 
 	public void on() {
