@@ -1,4 +1,4 @@
-package headfirst.designpatterns.observer.weatherobservable;
+package observer.weatherobservable;
 	
 import java.util.Observable;
 	

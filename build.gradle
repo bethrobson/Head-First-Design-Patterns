@@ -1,0 +1,25 @@
+group 'observer.weather'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+task(runWeatherStation, dependsOn: 'classes', type: JavaExec) {
+    main = 'observer.weather.WeatherStation'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runObservable, dependsOn: 'classes', type: JavaExec) {
+    main = 'observer.weatherobservable.WeatherStation'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runHeatIndex, dependsOn: 'classes', type: JavaExec) {
+    main = 'observer.weather.WeatherStationHeatIndex'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+
+defaultTasks 'runWeatherStation'
+
+
+
