@@ -1,7 +1,8 @@
-group 'observer.weather'
-
 apply plugin: 'java'
 apply plugin: 'idea'
+
+
+
 
 task(runWeatherStation, dependsOn: 'classes', type: JavaExec) {
     main = 'observer.weather.WeatherStation'
@@ -16,6 +17,22 @@ task(runObservable, dependsOn: 'classes', type: JavaExec) {
 task(runHeatIndex, dependsOn: 'classes', type: JavaExec) {
     main = 'observer.weather.WeatherStationHeatIndex'
     classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runStarBuzz, dependsOn: 'classes', type: JavaExec) {
+    main = 'decorator.starbuzz.StarbuzzCoffee'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task(runStarbuzzWithSizes, dependsOn: 'classes', type: JavaExec) {
+    main = 'decorator.starbuzzWithSizes.StarbuzzCoffee'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task (runInputDecoratorTest, dependsOn: 'classes', type: JavaExec) {
+    main = 'decorator.io.InputTest'
+    classpath = sourceSets.main.runtimeClasspath
+
 }
 
 
