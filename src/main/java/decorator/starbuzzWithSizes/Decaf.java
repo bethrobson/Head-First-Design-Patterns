@@ -1,4 +1,4 @@
-package headfirst.designpatterns.decorator.starbuzzWithSizes;
+package decorator.starbuzzWithSizes;
 
 public class Decaf extends Beverage {
 	public Decaf() {
