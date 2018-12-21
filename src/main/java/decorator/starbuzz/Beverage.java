@@ -1,4 +1,4 @@
-package headfirst.designpatterns.decorator.starbuzz;
+package decorator.starbuzz;
 
 public abstract class Beverage {
 	String description = "Unknown Beverage";
