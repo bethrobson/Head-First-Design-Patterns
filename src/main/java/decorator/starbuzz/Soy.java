@@ -8,7 +8,7 @@ public class Soy extends CondimentDecorator {
 	}
 
 	public String getDescription() {
-		return beverage.getDescription() + ", Soy";
+		return beverage.getDescription() + ", with Soy";
 	}
 
 	public double cost() {
