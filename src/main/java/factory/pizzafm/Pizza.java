@@ -1,8 +1,9 @@
-package headfirst.designpatterns.factory.pizzafm;
+package factory.pizzafm;
 
 import java.util.ArrayList;
 
 public abstract class Pizza {
+
 	String name;
 	String dough;
 	String sauce;
@@ -19,7 +20,7 @@ public abstract class Pizza {
 	}
   
 	void bake() {
-		System.out.println("Bake for 25 minutes at 350");
+		System.out.println("Bake for 25 minutes at 350°");
 	}
  
 	void cut() {
@@ -35,12 +36,12 @@ public abstract class Pizza {
 	}
 
 	public String toString() {
-		StringBuffer display = new StringBuffer();
-		display.append("---- " + name + " ----\n");
-		display.append(dough + "\n");
-		display.append(sauce + "\n");
+		StringBuilder display = new StringBuilder();
+		display.append("---- ").append(name).append(" ----\n");
+		display.append(dough).append("\n");
+		display.append(sauce).append("\n");
 		for (String topping : toppings) {
-			display.append(topping + "\n");
+			display.append(topping).append("\n");
 		}
 		return display.toString();
 	}

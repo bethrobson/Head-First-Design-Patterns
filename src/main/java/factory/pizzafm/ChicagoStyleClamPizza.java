@@ -1,4 +1,4 @@
-package headfirst.designpatterns.factory.pizzafm;
+package factory.pizzafm;
 
 public class ChicagoStyleClamPizza extends Pizza {
 	public ChicagoStyleClamPizza() {
@@ -9,7 +9,7 @@ public class ChicagoStyleClamPizza extends Pizza {
 		toppings.add("Shredded Mozzarella Cheese");
 		toppings.add("Frozen Clams from Chesapeake Bay");
 	}
- 
+
 	void cut() {
 		System.out.println("Cutting the pizza into square slices");
 	}
