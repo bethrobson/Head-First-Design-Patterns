@@ -1,6 +1,7 @@
 package factory.pizzaaf;
 
 public abstract class Pizza {
+
 	String name;
 
 	Dough dough;
@@ -13,7 +14,7 @@ public abstract class Pizza {
 	abstract void prepare();
 
 	void bake() {
-		System.out.println("Bake for 25 minutes at 350");
+		System.out.println("Bake for 25 minutes at 350°");
 	}
 
 	void cut() {
@@ -33,6 +34,7 @@ public abstract class Pizza {
 	}
 
 	public String toString() {
+
 		StringBuffer result = new StringBuffer();
 		result.append("---- " + name + " ----\n");
 		if (dough != null) {
