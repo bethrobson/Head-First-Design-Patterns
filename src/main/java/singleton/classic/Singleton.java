@@ -1,4 +1,4 @@
-package headfirst.designpatterns.singleton.classic;
+package singleton.classic;
 
 // NOTE: This is not thread safe!
 
@@ -9,6 +9,7 @@ public class Singleton {
  
 	public static Singleton getInstance() {
 		if (uniqueInstance == null) {
+			System.out.println("uniqueInstance = null!! Creating a singleton");
 			uniqueInstance = new Singleton();
 		}
 		return uniqueInstance;
