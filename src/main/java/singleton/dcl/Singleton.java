@@ -1,4 +1,4 @@
-package headfirst.designpatterns.singleton.dcl;
+package singleton.dcl;
 
 //
 // Danger!  This implementation of Singleton not
