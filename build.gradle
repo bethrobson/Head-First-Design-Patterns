@@ -1,7 +1,15 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
+repositories {
+    mavenCentral()
+}
 
+
+dependencies {
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
+
+}
 
 
 task(runWeatherStation, dependsOn: 'classes', type: JavaExec) {
