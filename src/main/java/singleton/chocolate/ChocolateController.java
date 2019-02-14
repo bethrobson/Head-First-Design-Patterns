@@ -1,4 +1,4 @@
-package headfirst.designpatterns.singleton.chocolate;
+package singleton.chocolate;
  
 public class ChocolateController {
 	public static void main(String args[]) {
