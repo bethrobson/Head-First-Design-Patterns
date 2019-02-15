@@ -8,6 +8,9 @@ repositories {
 
 dependencies {
     compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+    compile group: 'org.testng', name: 'testng', version: '6.10'
+
 
 }
 
