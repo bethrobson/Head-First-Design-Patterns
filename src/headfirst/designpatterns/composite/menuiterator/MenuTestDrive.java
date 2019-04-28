@@ -2,7 +2,7 @@ package headfirst.designpatterns.composite.menuiterator;
 
 public class MenuTestDrive {
 	public static void main(String args[]) {
-
+		
 		MenuComponent pancakeHouseMenu = 
 			new Menu("PANCAKE HOUSE MENU", "Breakfast");
 		MenuComponent dinerMenu = 
@@ -108,6 +108,7 @@ public class MenuTestDrive {
 		Waitress waitress = new Waitress(allMenus);
    
 		waitress.printVegetarianMenu();
+		//waitress.printMenu();
  
 	}
 }
