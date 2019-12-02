@@ -39,7 +39,7 @@ class ImageProxy implements Icon {
 			g.drawString("Loading CD cover, please wait...", x+300, y+190);
 			if (!retrieving) {
 				retrieving = true;
-
+/*
 				retrievalThread = new Thread(new Runnable() {
 					public void run() {
 						try {
@@ -49,6 +49,15 @@ class ImageProxy implements Icon {
 							e.printStackTrace();
 						}
 					}
+				});
+				*/
+				retrievalThread = new Thread(() -> {
+						try {
+							setImageIcon(new ImageIcon(imageURL, "CD Cover"));
+							c.repaint();
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 				});
 				retrievalThread.start();
 			}

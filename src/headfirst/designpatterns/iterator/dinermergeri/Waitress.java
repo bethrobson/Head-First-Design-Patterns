@@ -1,6 +1,7 @@
 package headfirst.designpatterns.iterator.dinermergeri;
 
 import java.util.Iterator;
+import java.util.ArrayList;
  
 public class Waitress {
 	Menu pancakeHouseMenu;
@@ -10,6 +11,27 @@ public class Waitress {
 		this.pancakeHouseMenu = pancakeHouseMenu;
 		this.dinerMenu = dinerMenu;
 	}
+	
+	// --- added 12/30/2016 - not in original code
+	public void printMenu(int withNewConstructs) {
+		ArrayList<MenuItem> breakfastItems = ((PancakeHouseMenu) pancakeHouseMenu).getMenuItems();
+		//pMenu.forEach(m -> printMenuItem(m));
+		for (MenuItem m : breakfastItems) {
+			printMenuItem(m);
+		}
+		
+		MenuItem[] lunchItems = ((DinerMenu) dinerMenu).getMenuItems();
+		for (MenuItem m : lunchItems) {
+			printMenuItem(m);
+		}
+	}
+	
+	public void printMenuItem(MenuItem menuItem) {
+		System.out.print(menuItem.getName() + ", ");
+		System.out.print(menuItem.getPrice() + " -- ");
+		System.out.println(menuItem.getDescription());
+	}
+	// ---
  
 	public void printMenu() {
 		Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();

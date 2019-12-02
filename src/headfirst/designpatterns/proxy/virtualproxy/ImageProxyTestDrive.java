@@ -15,7 +15,7 @@ public class ImageProxyTestDrive {
 		ImageProxyTestDrive testDrive = new ImageProxyTestDrive();
 	}
 
-	public ImageProxyTestDrive() throws Exception{
+	public ImageProxyTestDrive() throws Exception {
 		cds.put("Buddha Bar","http://images.amazon.com/images/P/B00009XBYK.01.LZZZZZZZ.jpg");
 		cds.put("Ima","http://images.amazon.com/images/P/B000005IRM.01.LZZZZZZZ.jpg");
 		cds.put("Karma","http://images.amazon.com/images/P/B000005DCB.01.LZZZZZZZ.gif");

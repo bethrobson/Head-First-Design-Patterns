@@ -1,8 +1,6 @@
 package headfirst.designpatterns.decorator.starbuzz;
 
 public class Milk extends CondimentDecorator {
-	Beverage beverage;
-
 	public Milk(Beverage beverage) {
 		this.beverage = beverage;
 	}
