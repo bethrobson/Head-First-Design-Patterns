@@ -3,9 +3,9 @@ package headfirst.designpatterns.observer.weather;
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	private float temperature;
 	private float humidity;
-	private Subject weatherData;
+	private WeatherData weatherData;
 	
-	public CurrentConditionsDisplay(Subject weatherData) {
+	public CurrentConditionsDisplay(WeatherData weatherData) {
 		this.weatherData = weatherData;
 		weatherData.registerObserver(this);
 	}
