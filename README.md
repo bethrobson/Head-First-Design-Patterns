@@ -11,3 +11,4 @@ https://wiki.eclipse.org/JDT/Eclipse_Java_8_Support_For_Kepler
 
 Other links for the book are available on the book page at <a href="http://wickedlysmart.com/head-first-design-patterns/">wickedlysmart.com</a>.
 
+Thanks 
