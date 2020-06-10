@@ -72,7 +72,6 @@ public class HomeTheaterFacade {
 	public void endCd() {
 		System.out.println("Shutting down CD...");
 		amp.off();
-		amp.setCd(cd);
 		cd.eject();
 		cd.off();
 	}

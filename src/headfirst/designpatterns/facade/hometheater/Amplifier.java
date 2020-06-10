@@ -31,7 +31,7 @@ public class Amplifier {
 	}
 
 	public void setTuner(Tuner tuner) {
-		System.out.println(description + " setting tuner to " + dvd);
+		System.out.println(description + " setting tuner to " + tuner);
 		this.tuner = tuner;
 	}
   
