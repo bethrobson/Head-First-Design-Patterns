@@ -1,12 +1,13 @@
 package headfirst.designpatterns.factory.pizzas;
 
 import java.util.ArrayList;
+import java.util.List;
 
 abstract public class Pizza {
 	String name;
 	String dough;
 	String sauce;
-	ArrayList<String> toppings = new ArrayList<String>();
+	List<String> toppings = new ArrayList<String>();
 
 	public String getName() {
 		return name;
