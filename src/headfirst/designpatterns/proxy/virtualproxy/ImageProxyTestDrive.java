@@ -6,35 +6,35 @@ import java.util.*;
 
 public class ImageProxyTestDrive {
 	ImageComponent imageComponent;
-	JFrame frame = new JFrame("CD Cover Viewer");
+	JFrame frame = new JFrame("Album Cover Viewer");
 	JMenuBar menuBar;
 	JMenu menu;
-	Hashtable<String, String> cds = new Hashtable<String, String>();
+	Hashtable<String, String> albums = new Hashtable<String, String>();
 
 	public static void main (String[] args) throws Exception {
 		ImageProxyTestDrive testDrive = new ImageProxyTestDrive();
 	}
 
 	public ImageProxyTestDrive() throws Exception {
-		cds.put("Buddha Bar","http://images.amazon.com/images/P/B00009XBYK.01.LZZZZZZZ.jpg");
-		cds.put("Ima","http://images.amazon.com/images/P/B000005IRM.01.LZZZZZZZ.jpg");
-		cds.put("Karma","http://images.amazon.com/images/P/B000005DCB.01.LZZZZZZZ.gif");
-		cds.put("MCMXC A.D.","http://images.amazon.com/images/P/B000002URV.01.LZZZZZZZ.jpg");
-		cds.put("Northern Exposure","http://images.amazon.com/images/P/B000003SFN.01.LZZZZZZZ.jpg");
-		cds.put("Selected Ambient Works, Vol. 2","http://images.amazon.com/images/P/B000002MNZ.01.LZZZZZZZ.jpg");
+		albums.put("Buddha Bar","http://images.amazon.com/images/P/B00009XBYK.01.LZZZZZZZ.jpg");
+		albums.put("Ima","http://images.amazon.com/images/P/B000005IRM.01.LZZZZZZZ.jpg");
+		albums.put("Karma","http://images.amazon.com/images/P/B000005DCB.01.LZZZZZZZ.gif");
+		albums.put("MCMXC A.D.","http://images.amazon.com/images/P/B000002URV.01.LZZZZZZZ.jpg");
+		albums.put("Northern Exposure","http://images.amazon.com/images/P/B000003SFN.01.LZZZZZZZ.jpg");
+		albums.put("Selected Ambient Works, Vol. 2","http://images.amazon.com/images/P/B000002MNZ.01.LZZZZZZZ.jpg");
 
-		URL initialURL = new URL((String)cds.get("Selected Ambient Works, Vol. 2"));
+		URL initialURL = new URL((String)albums.get("Selected Ambient Works, Vol. 2"));
 		menuBar = new JMenuBar();
-		menu = new JMenu("Favorite CDs");
+		menu = new JMenu("Favorite Albums");
 		menuBar.add(menu);
 		frame.setJMenuBar(menuBar);
 
-		for (Enumeration<String> e = cds.keys(); e.hasMoreElements();) {
+		for (Enumeration<String> e = albums.keys(); e.hasMoreElements();) {
 			String name = (String)e.nextElement();
 			JMenuItem menuItem = new JMenuItem(name);
 			menu.add(menuItem); 
 			menuItem.addActionListener(event -> {
-				imageComponent.setIcon(new ImageProxy(getCDUrl(event.getActionCommand())));
+				imageComponent.setIcon(new ImageProxy(getAlbumUrl(event.getActionCommand())));
 				frame.repaint();
 			});
 		}
@@ -50,9 +50,9 @@ public class ImageProxyTestDrive {
 
 	}
 
-	URL getCDUrl(String name) {
+	URL getAlbumUrl(String name) {
 		try {
-			return new URL((String)cds.get(name));
+			return new URL((String)albums.get(name));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 			return null;

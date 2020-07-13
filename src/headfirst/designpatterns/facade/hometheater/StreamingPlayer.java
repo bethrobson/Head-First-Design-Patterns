@@ -1,12 +1,12 @@
 package headfirst.designpatterns.facade.hometheater;
 
-public class DvdPlayer {
+public class StreamingPlayer {
 	String description;
-	int currentTrack;
+	int currentChapter;
 	Amplifier amplifier;
 	String movie;
 	
-	public DvdPlayer(String description, Amplifier amplifier) {
+	public StreamingPlayer(String description, Amplifier amplifier) {
 		this.description = description;
 		this.amplifier = amplifier;
 	}
@@ -18,29 +18,24 @@ public class DvdPlayer {
 	public void off() {
 		System.out.println(description + " off");
 	}
-
-        public void eject() {
-		movie = null;
-                System.out.println(description + " eject");
-        }
  
 	public void play(String movie) {
 		this.movie = movie;
-		currentTrack = 0;
+		currentChapter = 0;
 		System.out.println(description + " playing \"" + movie + "\"");
 	}
 
-	public void play(int track) {
+	public void play(int chapter) {
 		if (movie == null) {
-			System.out.println(description + " can't play track " + track + " no dvd inserted");
+			System.out.println(description + " can't play chapter " + chapter + " no movie selected");
 		} else {
-			currentTrack = track;
-			System.out.println(description + " playing track " + currentTrack + " of \"" + movie + "\"");
+			currentChapter = chapter;
+			System.out.println(description + " playing chapter " + currentChapter + " of \"" + movie + "\"");
 		}
 	}
 
 	public void stop() {
-		currentTrack = 0;
+		currentChapter = 0;
 		System.out.println(description + " stopped \"" + movie + "\"");
 	}
  

@@ -7,7 +7,7 @@ public class GumballMonitorTestDrive {
 	public static void main(String[] args) {
 		String[] location = {"rmi://santafe.mightygumball.com/gumballmachine",
 		                     "rmi://boulder.mightygumball.com/gumballmachine",
-		                     "rmi://seattle.mightygumball.com/gumballmachine"}; 
+		                     "rmi://austin.mightygumball.com/gumballmachine"}; 
 		
 		if (args.length >= 0)
         {
@@ -16,7 +16,6 @@ public class GumballMonitorTestDrive {
         }
 		
 		GumballMonitor[] monitor = new GumballMonitor[location.length];
-		
 		
 		
 		for (int i=0;i < location.length; i++) {
@@ -30,7 +29,7 @@ public class GumballMonitorTestDrive {
         	}
 		}
  
-		for(int i=0; i < monitor.length; i++) {
+		for (int i=0; i < monitor.length; i++) {
 			monitor[i].report();
 		}
 	}

@@ -1,10 +1,10 @@
 package headfirst.designpatterns.combining.observer;
 
 import java.util.Iterator;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Flock implements Quackable {
-	ArrayList<Quackable> ducks = new ArrayList<Quackable>();
+	List<Quackable> ducks = new ArrayList<Quackable>();
   
 	public void add(Quackable duck) {
 		ducks.add(duck);
