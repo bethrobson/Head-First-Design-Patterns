@@ -22,11 +22,11 @@ public class MatchMakingTestDrive {
 		ownerProxy.setInterests("bowling, Go");
 		System.out.println("Interests set from owner proxy");
 		try {
-			ownerProxy.setHotOrNotRating(10);
+			ownerProxy.setGeekRating(10);
 		} catch (Exception e) {
 			System.out.println("Can't set rating from owner proxy");
 		}
-		System.out.println("Rating is " + ownerProxy.getHotOrNotRating());
+		System.out.println("Rating is " + ownerProxy.getGeekRating());
 
 		PersonBean nonOwnerProxy = getNonOwnerProxy(joe);
 		System.out.println("Name is " + nonOwnerProxy.getName());
@@ -35,9 +35,9 @@ public class MatchMakingTestDrive {
 		} catch (Exception e) {
 			System.out.println("Can't set interests from non owner proxy");
 		}
-		nonOwnerProxy.setHotOrNotRating(3);
+		nonOwnerProxy.setGeekRating(3);
 		System.out.println("Rating set from non owner proxy");
-		System.out.println("Rating is " + nonOwnerProxy.getHotOrNotRating());
+		System.out.println("Rating is " + nonOwnerProxy.getGeekRating());
 	}
 
 	PersonBean getOwnerProxy(PersonBean person) {
@@ -64,13 +64,13 @@ public class MatchMakingTestDrive {
 		PersonBean joe = new PersonBeanImpl();
 		joe.setName("Joe Javabean");
 		joe.setInterests("cars, computers, music");
-		joe.setHotOrNotRating(7);
+		joe.setGeekRating(7);
 		datingDB.put(joe.getName(), joe);
 
 		PersonBean kelly = new PersonBeanImpl();
 		kelly.setName("Kelly Klosure");
 		kelly.setInterests("ebay, movies, music");
-		kelly.setHotOrNotRating(6);
+		kelly.setGeekRating(6);
 		datingDB.put(kelly.getName(), kelly);
 	}
 }

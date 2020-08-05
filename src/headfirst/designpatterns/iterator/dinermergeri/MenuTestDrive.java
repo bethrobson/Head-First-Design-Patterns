@@ -5,8 +5,11 @@ public class MenuTestDrive {
 		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		DinerMenu dinerMenu = new DinerMenu();
 		Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
-		waitress.printMenu();
-		waitress.printVegetarianMenu();
+		//waitress.printMenu();
+		// -- added 12/30/2016
+		waitress.printMenu(1);
+		// ---
+		//waitress.printVegetarianMenu();
 
 		System.out.println("\nCustomer asks, is the Hotdog vegetarian?");
 		System.out.print("Waitress says: ");

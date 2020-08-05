@@ -3,8 +3,7 @@ package headfirst.designpatterns.facade.hometheater;
 public class Amplifier {
 	String description;
 	Tuner tuner;
-	DvdPlayer dvd;
-	CdPlayer cd;
+	StreamingPlayer player;
 	
 	public Amplifier(String description) {
 		this.description = description;
@@ -35,14 +34,9 @@ public class Amplifier {
 		this.tuner = tuner;
 	}
   
-	public void setDvd(DvdPlayer dvd) {
-		System.out.println(description + " setting DVD player to " + dvd);
-		this.dvd = dvd;
-	}
- 
-	public void setCd(CdPlayer cd) {
-		System.out.println(description + " setting CD player to " + cd);
-		this.cd = cd;
+	public void setStreamingPlayer(StreamingPlayer player) {
+		System.out.println(description + " setting Streaming player to " + player);
+		this.player = player;
 	}
  
 	public String toString() {

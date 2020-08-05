@@ -19,7 +19,7 @@ public class PersonBeanImpl implements PersonBean {
 		return interests;
 	}
    
-	public int getHotOrNotRating() {
+	public int getGeekRating() {
 		if (ratingCount == 0) return 0;
 		return (rating/ratingCount);
 	}
@@ -37,8 +37,9 @@ public class PersonBeanImpl implements PersonBean {
 		this.interests = interests;
 	} 
   
-	public void setHotOrNotRating(int rating) {
+	public void setGeekRating(int rating) {
 		this.rating += rating;	
 		ratingCount++;
 	}
+
 }

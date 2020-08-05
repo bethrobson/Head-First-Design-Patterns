@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<title>Monsters</title>
+<meta charset="utf-8">
+<script>
+class Monster {
+	eatsChildren = true;
+	hasWings = false;
+	numHeads = 1;
+	canBreatheFire = false;
+	constructor(name) { 
+		this.name = name;
+	}
+	spitPoison() { }
+}
+class Dragon extends Monster {
+	constructor(name, hasWings) {
+		super(name);
+		this.hasWings = hasWings;
+	}
+}
+class Drakon extends Monster {
+	constructor(name, numHeads, canBreatheFire) {
+		super(name);
+		this.numHeads = numHeads;
+		this.canBreatheFire = canBreatheFire;
+	}
+	spitPoison() {
+		console.log(this.name + " spits poison");
+	}
+}
+
+let ladon = new Dragon("Ladon", false);
+let drakon = new Drakon("Drakon", 2, true);
+
+//let laconian = Object.create(drakon);
+let laconian = makeMonster(drakon);
+laconian.name = "Laconian";
+
+function makeMonster(p) {
+	return Object.create(p);
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
+

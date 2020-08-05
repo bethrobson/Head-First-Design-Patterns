@@ -15,7 +15,7 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
 		try {
 			if (method.getName().startsWith("get")) {
 				return method.invoke(person, args);
-   			} else if (method.getName().equals("setHotOrNotRating")) {
+   			} else if (method.getName().equals("setGeekRating")) {
 				return method.invoke(person, args);
 			} else if (method.getName().startsWith("set")) {
 				throw new IllegalAccessException();

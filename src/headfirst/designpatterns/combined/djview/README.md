@@ -46,4 +46,14 @@ folder:
 13. Navigate to localhost:8080/djview/djview.jsp
 
 
+NEW
+Don't need tomcat.
+Run DJViewHttpServer, this will run the server on port 8080.
+CORS disabled so requests can come from different servers.
+Client:
+run HFDP/dj/dj.html from local web server (port 80 usually).
+
+
+
+
 

@@ -1,9 +1,10 @@
 package headfirst.designpatterns.iterator.dinermerger;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PancakeHouseMenu implements Menu {
-	ArrayList<MenuItem> menuItems;
+	List<MenuItem> menuItems;
  
 	public PancakeHouseMenu() {
 		menuItems = new ArrayList<MenuItem>();
@@ -36,7 +37,7 @@ public class PancakeHouseMenu implements Menu {
 		menuItems.add(menuItem);
 	}
  
-	public ArrayList<MenuItem> getMenuItems() {
+	public List<MenuItem> getMenuItems() {
 		return menuItems;
 	}
   
