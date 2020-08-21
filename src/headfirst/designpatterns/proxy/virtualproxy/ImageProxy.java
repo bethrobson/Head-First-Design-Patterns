@@ -39,7 +39,7 @@ class ImageProxy implements Icon {
 			g.drawString("Loading album cover, please wait...", x+300, y+190);
 			if (!retrieving) {
 				retrieving = true;
-				/*
+				
 				retrievalThread = new Thread(new Runnable() {
 					public void run() {
 						try {
@@ -50,7 +50,7 @@ class ImageProxy implements Icon {
 						}
 					}
 				});
-				*/
+				
 				retrievalThread = new Thread(() -> {
 						try {
 							setImageIcon(new ImageIcon(imageURL, "Album Cover"));
@@ -60,7 +60,7 @@ class ImageProxy implements Icon {
 						}
 				});
 				retrievalThread.start();
-
+				
 			}
 		}
 	}

@@ -17,10 +17,7 @@ public class WeatherData implements Subject {
 	}
 	
 	public void removeObserver(Observer o) {
-		int i = observers.indexOf(o);
-		if (i >= 0) {
-			observers.remove(i);
-		}
+		observers.remove(o);
 	}
 	
 	public void notifyObservers() {
