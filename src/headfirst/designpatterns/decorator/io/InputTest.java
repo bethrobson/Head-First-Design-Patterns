@@ -8,7 +8,7 @@ public class InputTest {
 		InputStream in = null;
 		try {
 			in = 
-				new LowerCaseInputStream(
+				new LowerCaseInputStream( 
 					new BufferedInputStream(
 						new FileInputStream("test.txt")));
 
