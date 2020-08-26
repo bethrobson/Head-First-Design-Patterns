@@ -21,7 +21,7 @@ public class CafeMenu implements Menu {
 	                     boolean vegetarian, double price) 
 	{
 		MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
-		menuItems.put(menuItem.getName(), menuItem);
+		menuItems.put(name, menuItem);
 	}
  
 	public Map<String, MenuItem> getItems() {
