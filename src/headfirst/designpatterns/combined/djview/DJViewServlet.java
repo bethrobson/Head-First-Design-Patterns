@@ -1,3 +1,11 @@
+// This code is from Head First Design Patterns first edition
+// and has been removed from the second edition.
+//
+// Left here for those with the first edition, but no guarantees it 
+// will work.
+//
+// 9/15/2020
+//
 package headfirst.designpatterns.combined.djview;
 
 import javax.servlet.*;

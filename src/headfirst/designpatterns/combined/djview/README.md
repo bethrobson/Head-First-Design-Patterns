@@ -1,3 +1,10 @@
+# The Servlet code has been removed from 
+# Head First Design Patterns 2nd edition
+#
+# No guarantees that it will work.
+#
+# 9/15/2020
+#
 # To run the DJView Servlet on localhost
 
 1. Download Tomcat: http://tomcat.apache.org/index.html
