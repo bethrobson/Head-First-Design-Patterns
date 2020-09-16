@@ -3,9 +3,9 @@ package headfirst.designpatterns.proxy.javaproxy;
 import java.lang.reflect.*;
  
 public class NonOwnerInvocationHandler implements InvocationHandler { 
-	PersonBean person;
+	Person person;
  
-	public NonOwnerInvocationHandler(PersonBean person) {
+	public NonOwnerInvocationHandler(Person person) {
 		this.person = person;
 	}
  

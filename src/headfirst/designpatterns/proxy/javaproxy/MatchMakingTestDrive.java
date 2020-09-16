@@ -4,7 +4,7 @@ import java.lang.reflect.*;
 import java.util.*;
 
 public class MatchMakingTestDrive {
-	HashMap<String, PersonBean> datingDB = new HashMap<String, PersonBean>();
+	HashMap<String, Person> datingDB = new HashMap<String, Person>();
  	
 	public static void main(String[] args) {
 		MatchMakingTestDrive test = new MatchMakingTestDrive();
@@ -16,8 +16,8 @@ public class MatchMakingTestDrive {
 	}
 
 	public void drive() {
-		PersonBean joe = getPersonFromDatabase("Joe Javabean"); 
-		PersonBean ownerProxy = getOwnerProxy(joe);
+		Person joe = getPersonFromDatabase("Joe Javabean"); 
+		Person ownerProxy = getOwnerProxy(joe);
 		System.out.println("Name is " + ownerProxy.getName());
 		ownerProxy.setInterests("bowling, Go");
 		System.out.println("Interests set from owner proxy");
@@ -28,7 +28,7 @@ public class MatchMakingTestDrive {
 		}
 		System.out.println("Rating is " + ownerProxy.getGeekRating());
 
-		PersonBean nonOwnerProxy = getNonOwnerProxy(joe);
+		Person nonOwnerProxy = getNonOwnerProxy(joe);
 		System.out.println("Name is " + nonOwnerProxy.getName());
 		try {
 			nonOwnerProxy.setInterests("bowling, Go");
@@ -40,34 +40,34 @@ public class MatchMakingTestDrive {
 		System.out.println("Rating is " + nonOwnerProxy.getGeekRating());
 	}
 
-	PersonBean getOwnerProxy(PersonBean person) {
+	Person getOwnerProxy(Person person) {
  		
-        return (PersonBean) Proxy.newProxyInstance( 
+        return (Person) Proxy.newProxyInstance( 
             	person.getClass().getClassLoader(),
             	person.getClass().getInterfaces(),
                 new OwnerInvocationHandler(person));
 	}
 
-	PersonBean getNonOwnerProxy(PersonBean person) {
+	Person getNonOwnerProxy(Person person) {
 		
-        return (PersonBean) Proxy.newProxyInstance(
+        return (Person) Proxy.newProxyInstance(
             	person.getClass().getClassLoader(),
             	person.getClass().getInterfaces(),
                 new NonOwnerInvocationHandler(person));
 	}
 
-	PersonBean getPersonFromDatabase(String name) {
-		return (PersonBean)datingDB.get(name);
+	Person getPersonFromDatabase(String name) {
+		return (Person)datingDB.get(name);
 	}
 
 	void initializeDatabase() {
-		PersonBean joe = new PersonBeanImpl();
+		Person joe = new PersonImpl();
 		joe.setName("Joe Javabean");
 		joe.setInterests("cars, computers, music");
 		joe.setGeekRating(7);
 		datingDB.put(joe.getName(), joe);
 
-		PersonBean kelly = new PersonBeanImpl();
+		Person kelly = new PersonImpl();
 		kelly.setName("Kelly Klosure");
 		kelly.setInterests("ebay, movies, music");
 		kelly.setGeekRating(6);

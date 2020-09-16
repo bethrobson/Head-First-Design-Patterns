@@ -1,6 +1,6 @@
 package headfirst.designpatterns.proxy.javaproxy;
 
-public interface PersonBean {
+public interface Person {
  
 	String getName();
 	String getGender();

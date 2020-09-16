@@ -1,6 +1,6 @@
 package headfirst.designpatterns.proxy.javaproxy;
 
-public class PersonBeanImpl implements PersonBean {
+public class PersonImpl implements Person {
 	String name;
 	String gender;
 	String interests;
