@@ -1,16 +1,13 @@
 package headfirst.designpatterns.combined.djview;
 
 import javax.sound.midi.*;
-
 import java.io.File;
-import java.io.IOException;
-
 import java.util.*;
 
 public class BeatModel implements BeatModelInterface, MetaEventListener {
 	Sequencer sequencer;
-	ArrayList<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
-	ArrayList<BPMObserver> bpmObservers = new ArrayList<BPMObserver>();
+	List<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
+	List<BPMObserver> bpmObservers = new ArrayList<BPMObserver>();
 	int bpm = 90;
 	Sequence sequence;
 	Track track;
