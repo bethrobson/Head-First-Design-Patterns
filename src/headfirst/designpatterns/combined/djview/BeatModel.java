@@ -1,46 +1,62 @@
 package headfirst.designpatterns.combined.djview;
 
-import javax.sound.midi.*;
-import java.io.File;
 import java.util.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.*;
+import javax.sound.sampled.Line;
 
-public class BeatModel implements BeatModelInterface, MetaEventListener {
-	Sequencer sequencer;
+public class BeatModel implements BeatModelInterface, Runnable {
 	List<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
 	List<BPMObserver> bpmObservers = new ArrayList<BPMObserver>();
 	int bpm = 90;
-	Sequence sequence;
-	Track track;
+	Thread thread;
+	boolean stop = false;
+	Clip clip;
 
 	public void initialize() {
-		setUpMidi();
+		try {
+			File resource = new File("clap.wav");
+			clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
+			clip.open(AudioSystem.getAudioInputStream(resource));
+		}
+		catch(Exception ex) {
+			System.out.println("Error: Can't load clip");
+			System.out.println(ex);
+		}
 	}
 
 	public void on() {
-		System.out.println("Starting the sequencer");
-		setBPM(90);
-		sequencer.start();
+		bpm = 90;
+		//notifyBPMObservers();
+		thread = new Thread(this);
+		stop = false;
+		thread.start();
 	}
 
 	public void off() {
-		sequencer.stop();
-		setBPM(0);
+		stopBeat();
+		stop = true;
+	}
+
+	public void run() {
+		while (!stop) {
+			playBeat();
+			notifyBeatObservers();
+			try {
+				Thread.sleep(60000/getBPM());
+			} catch (Exception e) {}
+		}
 	}
 
 	public void setBPM(int bpm) {
 		this.bpm = bpm;
-		sequencer.setTempoInBPM(bpm);
 		notifyBPMObservers();
 	}
 
 	public int getBPM() {
 		return bpm;
 	}
-
-	void beatEvent() {
-		notifyBeatObservers();
-	}
-
 
 	public void registerObserver(BeatObserver o) {
 		beatObservers.add(o);
@@ -64,15 +80,12 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 		}
 	}
 
-
 	public void removeObserver(BeatObserver o) {
 		int i = beatObservers.indexOf(o);
 		if (i >= 0) {
 			beatObservers.remove(i);
 		}
 	}
-
-
 
 	public void removeObserver(BPMObserver o) {
 		int i = bpmObservers.indexOf(o);
@@ -81,35 +94,14 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 		}
 	}
 
-
-	public void meta(MetaMessage message) {
-		System.out.println(message.getType());
-		if (message.getType() == 47) {
-			beatEvent();
-			sequencer.start();
-			setBPM(getBPM());
-		}
+	public void playBeat() {
+		clip.setFramePosition(0);
+		clip.start();
+	}
+	public void stopBeat() {
+		clip.setFramePosition(0);
+		clip.stop();
 	}
 
-	public void setUpMidi() {
-		try {
-			Synthesizer synth = MidiSystem.getSynthesizer();
-			synth.loadAllInstruments(synth.getDefaultSoundbank());
-
-			sequencer = MidiSystem.getSequencer();
-			this.sequence = MidiSystem.getSequence(new File("test.mid"));
-			sequencer.open();
-			sequencer.setSequence(sequence);
-			sequencer.setTempoFactor(1f);
-			sequencer.addMetaEventListener(meta -> {
-				if (meta.getType() == 47) { 
-					sequencer.setTickPosition(0);
-					sequencer.start();
-				}
-			});
-			sequencer.setTempoInBPM(getBPM());
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	} 
 }
+
