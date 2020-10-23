@@ -25,7 +25,7 @@ public class PancakeHouseMenu implements Menu {
 			3.49);
  
 		addItem("Waffles",
-			"Waffles, with your choice of blueberries or strawberries",
+			"Waffles with your choice of blueberries or strawberries",
 			true,
 			3.59);
 	}

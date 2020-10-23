@@ -35,7 +35,7 @@ public class MenuTestDrive {
 			3.49));
 		pancakeHouseMenu.add(new MenuItem(
 			"Waffles",
-			"Waffles, with your choice of blueberries or strawberries",
+			"Waffles with your choice of blueberries or strawberries",
 			true,
 			3.59));
 
