@@ -8,6 +8,32 @@ project in Eclipse (Kepler, with the Java 8 beta patch).
 
 https://wiki.eclipse.org/JDT/Eclipse_Java_8_Support_For_Kepler
 
+# Maven wrapper installing dependencies
+
+# linux
+./mvnw install
+
+# windows
+mvnw install
+
+
+# Maven wrapper creating eclipse configuration
+
+# linux
+./mvnw eclipse:eclipse
+
+# windows
+mvnw eclipse:eclipse
+
+
+# Maven wrapper creating intellij configuration
+
+# linux
+./mvnw idea:idea
+
+# windows
+mvnw idea:idea
+
 
 Other links for the book are available on the book page at <a href="http://wickedlysmart.com/head-first-design-patterns/">wickedlysmart.com</a>.
 
