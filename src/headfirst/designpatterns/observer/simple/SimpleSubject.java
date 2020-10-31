@@ -3,7 +3,7 @@ package headfirst.designpatterns.observer.simple;
 import java.util.*;
 
 public class SimpleSubject implements Subject {
-	private ArrayList<Observer> observers;
+	private List<Observer> observers;
 	private int value = 0;
 	
 	public SimpleSubject() {
@@ -15,10 +15,7 @@ public class SimpleSubject implements Subject {
 	}
 	
 	public void removeObserver(Observer o) {
-		int i = observers.indexOf(o);
-		if (i >= 0) {
-			observers.remove(i);
-		}
+		observers.remove(o);
 	}
 	
 	public void notifyObservers() {

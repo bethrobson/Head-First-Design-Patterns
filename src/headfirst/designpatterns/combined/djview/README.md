@@ -1,3 +1,10 @@
+# The Servlet code has been removed from 
+# Head First Design Patterns 2nd edition
+#
+# No guarantees that it will work.
+#
+# 9/15/2020
+#
 # To run the DJView Servlet on localhost
 
 1. Download Tomcat: http://tomcat.apache.org/index.html
@@ -44,6 +51,16 @@ folder:
    * bin/startup.sh
 
 13. Navigate to localhost:8080/djview/djview.jsp
+
+
+NEW
+Don't need tomcat.
+Run DJViewHttpServer, this will run the server on port 8080.
+CORS disabled so requests can come from different servers.
+Client:
+run HFDP/dj/dj.html from local web server (port 80 usually).
+
+
 
 
 

@@ -17,7 +17,7 @@ public class DinerMenu implements Menu {
 		addItem("Soup of the day",
 			"Soup of the day, with a side of potato salad", false, 3.29);
 		addItem("Hotdog",
-			"A hot dog, with saurkraut, relish, onions, topped with cheese",
+			"A hot dog, with sauerkraut, relish, onions, topped with cheese",
 			false, 3.05);
 		addItem("Steamed Veggies and Brown Rice",
 			"A medly of steamed vegetables over brown rice", true, 3.99);

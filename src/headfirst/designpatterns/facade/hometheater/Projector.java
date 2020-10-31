@@ -2,11 +2,11 @@ package headfirst.designpatterns.facade.hometheater;
 
 public class Projector {
 	String description;
-	DvdPlayer dvdPlayer;
+	StreamingPlayer player;
 	
-	public Projector(String description, DvdPlayer dvdPlayer) {
+	public Projector(String description, StreamingPlayer player) {
 		this.description = description;
-		this.dvdPlayer = dvdPlayer;
+		this.player = player;
 	}
  
 	public void on() {

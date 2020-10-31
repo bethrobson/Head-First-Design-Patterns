@@ -39,7 +39,7 @@ public class GumballMachine {
  
 	void releaseBall() {
 		System.out.println("A gumball comes rolling out the slot...");
-		if (count != 0) {
+		if (count > 0) {
 			count = count - 1;
 		}
 	}
@@ -50,7 +50,7 @@ public class GumballMachine {
  
 	void refill(int count) {
 		this.count += count;
-		System.out.println("The gumball machine was just refilled; it's new count is: " + this.count);
+		System.out.println("The gumball machine was just refilled; its new count is: " + this.count);
 		state.refill();
 	}
 

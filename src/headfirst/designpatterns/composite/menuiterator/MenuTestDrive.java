@@ -20,7 +20,7 @@ public class MenuTestDrive {
   
 		pancakeHouseMenu.add(new MenuItem(
 			"K&B's Pancake Breakfast", 
-			"Pancakes with scrambled eggs, and toast", 
+			"Pancakes with scrambled eggs and toast", 
 			true,
 			2.99));
 		pancakeHouseMenu.add(new MenuItem(
@@ -30,12 +30,12 @@ public class MenuTestDrive {
 			2.99));
 		pancakeHouseMenu.add(new MenuItem(
 			"Blueberry Pancakes",
-			"Pancakes made with fresh blueberries, and blueberry syrup",
+			"Pancakes made with fresh blueberries and blueberry syrup",
 			true,
 			3.49));
 		pancakeHouseMenu.add(new MenuItem(
 			"Waffles",
-			"Waffles, with your choice of blueberries or strawberries",
+			"Waffles with your choice of blueberries or strawberries",
 			true,
 			3.59));
 
@@ -55,7 +55,7 @@ public class MenuTestDrive {
 			false, 
 			3.29));
 		dinerMenu.add(new MenuItem(
-			"Hotdog",
+			"Hot Dog",
 			"A hot dog, with saurkraut, relish, onions, topped with cheese",
 			false, 
 			3.05));
@@ -67,7 +67,7 @@ public class MenuTestDrive {
  
 		dinerMenu.add(new MenuItem(
 			"Pasta",
-			"Spaghetti with Marinara Sauce, and a slice of sourdough bread",
+			"Spaghetti with marinara sauce, and a slice of sourdough bread",
 			true, 
 			3.89));
    

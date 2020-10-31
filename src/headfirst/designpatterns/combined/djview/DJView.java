@@ -62,24 +62,36 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
         menu = new JMenu("DJ Control");
         startMenuItem = new JMenuItem("Start");
         menu.add(startMenuItem);
+        startMenuItem.addActionListener((event) -> controller.start());
+        // was....
+        /*
         startMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 controller.start();
             }
         });
+        */
         stopMenuItem = new JMenuItem("Stop");
         menu.add(stopMenuItem); 
+        stopMenuItem.addActionListener((event) -> controller.stop());
+        // was...
+        /*
         stopMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 controller.stop();
             }
         });
+        */
         JMenuItem exit = new JMenuItem("Quit");
+        exit.addActionListener((event) -> System.exit(0));
+        // was...
+        /*
         exit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 System.exit(0);
             }
         });
+        */
 
         menu.add(exit);
         menuBar.add(menu);
@@ -137,7 +149,13 @@ public class DJView implements ActionListener,  BeatObserver, BPMObserver {
 
     public void actionPerformed(ActionEvent event) {
 		if (event.getSource() == setBPMButton) {
-			int bpm = Integer.parseInt(bpmTextField.getText());
+			int bpm = 90;
+			String bpmText = bpmTextField.getText();
+			if (bpmText == null || bpmText.contentEquals("")) {
+				bpm = 90;
+			} else {
+				bpm = Integer.parseInt(bpmTextField.getText());
+			}
         	controller.setBPM(bpm);
 		} else if (event.getSource() == increaseBPMButton) {
 			controller.increaseBPM();

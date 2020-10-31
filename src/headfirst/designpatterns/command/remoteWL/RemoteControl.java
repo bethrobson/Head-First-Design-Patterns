@@ -29,7 +29,7 @@ public class RemoteControl {
 	public void offButtonWasPushed(int slot) {
 		offCommands[slot].execute();
 	}
-  
+
 	public String toString() {
 		StringBuffer stringBuff = new StringBuffer();
 		stringBuff.append("\n------ Remote Control -------\n");

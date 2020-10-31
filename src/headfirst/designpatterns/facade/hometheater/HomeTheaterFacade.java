@@ -3,7 +3,7 @@ package headfirst.designpatterns.facade.hometheater;
 public class HomeTheaterFacade {
 	Amplifier amp;
 	Tuner tuner;
-	DvdPlayer dvd;
+	StreamingPlayer player;
 	CdPlayer cd;
 	Projector projector;
 	TheaterLights lights;
@@ -12,8 +12,7 @@ public class HomeTheaterFacade {
  
 	public HomeTheaterFacade(Amplifier amp, 
 				 Tuner tuner, 
-				 DvdPlayer dvd, 
-				 CdPlayer cd, 
+				 StreamingPlayer player, 
 				 Projector projector, 
 				 Screen screen,
 				 TheaterLights lights,
@@ -21,8 +20,7 @@ public class HomeTheaterFacade {
  
 		this.amp = amp;
 		this.tuner = tuner;
-		this.dvd = dvd;
-		this.cd = cd;
+		this.player = player;
 		this.projector = projector;
 		this.screen = screen;
 		this.lights = lights;
@@ -38,11 +36,11 @@ public class HomeTheaterFacade {
 		projector.on();
 		projector.wideScreenMode();
 		amp.on();
-		amp.setDvd(dvd);
+		amp.setStreamingPlayer(player);
 		amp.setSurroundSound();
 		amp.setVolume(5);
-		dvd.on();
-		dvd.play(movie);
+		player.on();
+		player.play(movie);
 	}
  
  
@@ -53,28 +51,8 @@ public class HomeTheaterFacade {
 		screen.up();
 		projector.off();
 		amp.off();
-		dvd.stop();
-		dvd.eject();
-		dvd.off();
-	}
-
-	public void listenToCd(String cdTitle) {
-		System.out.println("Get ready for an audiopile experence...");
-		lights.on();
-		amp.on();
-		amp.setVolume(5);
-		amp.setCd(cd);
-		amp.setStereoSound();
-		cd.on();
-		cd.play(cdTitle);
-	}
-
-	public void endCd() {
-		System.out.println("Shutting down CD...");
-		amp.off();
-		amp.setCd(cd);
-		cd.eject();
-		cd.off();
+		player.stop();
+		player.off();
 	}
 
 	public void listenToRadio(double frequency) {

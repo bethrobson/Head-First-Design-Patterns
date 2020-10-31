@@ -1,15 +1,16 @@
 package headfirst.designpatterns.iterator.dinermerger;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PancakeHouseMenu implements Menu {
-	ArrayList<MenuItem> menuItems;
+	List<MenuItem> menuItems;
  
 	public PancakeHouseMenu() {
 		menuItems = new ArrayList<MenuItem>();
     
 		addItem("K&B's Pancake Breakfast", 
-			"Pancakes with scrambled eggs, and toast", 
+			"Pancakes with scrambled eggs and toast", 
 			true,
 			2.99);
  
@@ -24,7 +25,7 @@ public class PancakeHouseMenu implements Menu {
 			3.49);
  
 		addItem("Waffles",
-			"Waffles, with your choice of blueberries or strawberries",
+			"Waffles with your choice of blueberries or strawberries",
 			true,
 			3.59);
 	}
@@ -36,7 +37,7 @@ public class PancakeHouseMenu implements Menu {
 		menuItems.add(menuItem);
 	}
  
-	public ArrayList<MenuItem> getMenuItems() {
+	public List<MenuItem> getMenuItems() {
 		return menuItems;
 	}
   

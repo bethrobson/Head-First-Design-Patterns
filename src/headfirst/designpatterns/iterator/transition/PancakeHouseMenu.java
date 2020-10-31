@@ -10,7 +10,7 @@ public class PancakeHouseMenu implements Menu {
 		menuItems = new ArrayList<MenuItem>();
     
 		addItem("K&B's Pancake Breakfast", 
-			"Pancakes with scrambled eggs, and toast", 
+			"Pancakes with scrambled eggs and toast", 
 			true,
 			2.99);
  
@@ -20,12 +20,12 @@ public class PancakeHouseMenu implements Menu {
 			2.99);
  
 		addItem("Blueberry Pancakes",
-			"Pancakes made with fresh blueberries, and blueberry syrup",
+			"Pancakes made with fresh blueberries and blueberry syrup",
 			true,
 			3.49);
  
 		addItem("Waffles",
-			"Waffles, with your choice of blueberries or strawberries",
+			"Waffles with your choice of blueberries or strawberries",
 			true,
 			3.59);
 	}

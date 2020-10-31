@@ -6,9 +6,9 @@ import headfirst.designpatterns.adapter.ducks.challenge.SuperDrone;
 
 public class DuckTestDrive {
 	public static void main(String[] args) {
-		MallardDuck duck = new MallardDuck();
+		Duck duck = new MallardDuck();
 
-		WildTurkey turkey = new WildTurkey();
+		Turkey turkey = new WildTurkey();
 		Duck turkeyAdapter = new TurkeyAdapter(turkey);
 
 		System.out.println("The Turkey says...");

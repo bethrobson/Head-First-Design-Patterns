@@ -3,9 +3,9 @@ package headfirst.designpatterns.proxy.javaproxy;
 import java.lang.reflect.*;
  
 public class OwnerInvocationHandler implements InvocationHandler { 
-	PersonBean person;
+	Person person;
  
-	public OwnerInvocationHandler(PersonBean person) {
+	public OwnerInvocationHandler(Person person) {
 		this.person = person;
 	}
  
@@ -15,7 +15,7 @@ public class OwnerInvocationHandler implements InvocationHandler {
 		try {
 			if (method.getName().startsWith("get")) {
 				return method.invoke(person, args);
-   			} else if (method.getName().equals("setHotOrNotRating")) {
+   			} else if (method.getName().equals("setGeekRating")) {
 				throw new IllegalAccessException();
 			} else if (method.getName().startsWith("set")) {
 				return method.invoke(person, args);
