@@ -1,13 +1,8 @@
-# Head First Design Patterns (2014 update)
+# Head First Design Patterns (2020 2nd Edition)
 
-I have recently updated all the code for Head First Design Patterns to be compatible
-with Java 8. This new code accompanies an update for the book, released in July, 2014.
+I have recently updated all the code for Head First Design Patterns for the 2nd edition of the book, released in December, 2020.
 
-Download the code and compile and run from the command line, or load the code into 
-project in Eclipse (Kepler, with the Java 8 beta patch).
-
-https://wiki.eclipse.org/JDT/Eclipse_Java_8_Support_For_Kepler
-
+Download the code and compile and run from the command line, or load the code into project in Eclipse using Java 8 or higher.
 
 Other links for the book are available on the book page at <a href="http://wickedlysmart.com/head-first-design-patterns/">wickedlysmart.com</a>.
 
