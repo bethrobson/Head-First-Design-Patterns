@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class HouseBuilder {
 	String builderName;
 	enum HouseType {
-		STONE, WOOD, GINGERBREAD
+		WOOD, CLAY, GINGERBREAD, STONE 
 	}
 	HouseType houseType;
 	House house = new House();
