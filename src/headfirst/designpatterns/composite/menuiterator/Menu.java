@@ -36,7 +36,7 @@ public class Menu extends MenuComponent {
 
   
 	public Iterator<MenuComponent> createIterator() {
-		if (iterator == null) {
+		if (iterator == null || !iterator.hasNext()) {
 			iterator = new CompositeIterator(menuComponents.iterator());
 		}
 		return iterator;
