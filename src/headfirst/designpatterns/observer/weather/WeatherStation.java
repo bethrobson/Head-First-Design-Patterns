@@ -16,5 +16,11 @@ public class WeatherStation {
 		
 		weatherData.removeObserver(forecastDisplay);
 		weatherData.setMeasurements(62, 90, 28.1f);
+
+		SchoolCancellationDisplay schoolCancellationDisplay = new SchoolCancellationDisplay(weatherData);
+
+		weatherData.setMeasurements(30, 40, 29, 12.5f);
+		weatherData.setMeasurements(30, 40, 29, 12);
+
 	}
 }
