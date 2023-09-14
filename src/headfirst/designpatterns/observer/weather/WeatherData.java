@@ -7,6 +7,8 @@ public class WeatherData implements Subject {
 	private float temperature;
 	private float humidity;
 	private float pressure;
+
+	private float snowFallInches;
 	
 	public WeatherData() {
 		observers = new ArrayList<Observer>();
@@ -22,18 +24,27 @@ public class WeatherData implements Subject {
 	
 	public void notifyObservers() {
 		for (Observer observer : observers) {
-			observer.update(temperature, humidity, pressure);
+			observer.update(temperature, humidity, pressure, snowFallInches);
 		}
 	}
 	
 	public void measurementsChanged() {
 		notifyObservers();
 	}
-	
+
 	public void setMeasurements(float temperature, float humidity, float pressure) {
 		this.temperature = temperature;
 		this.humidity = humidity;
 		this.pressure = pressure;
+		this.snowFallInches = snowFallInches;
+		measurementsChanged();
+	}
+	
+	public void setMeasurements(float temperature, float humidity, float pressure, float snowFallInches) {
+		this.temperature = temperature;
+		this.humidity = humidity;
+		this.pressure = pressure;
+		this.snowFallInches = snowFallInches;
 		measurementsChanged();
 	}
 
