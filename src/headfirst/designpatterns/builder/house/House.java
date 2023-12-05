@@ -17,9 +17,10 @@ public class House {
 	public House setHouseType(HouseType houseType) {
 		this.houseType = houseType;
 		switch (houseType) {
-			case STONE: this.name = "My stone house";
-			case WOOD: this.name = "My wood house";
-			case GINGERBREAD: this.name = "My holiday gingerbread house";
+			case WOOD: this.name = "My wood house"; break;
+			case CLAY: this.name = "My clay house"; break;
+			case GINGERBREAD: this.name = "My holiday gingerbread house"; break;
+			case STONE: this.name = "My stone house"; break;
 		}
 		return this;
 	}

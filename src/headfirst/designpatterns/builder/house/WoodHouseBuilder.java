@@ -16,16 +16,19 @@ public class WoodHouseBuilder extends HouseBuilder {
 	public HouseBuilder addWalls() {
 		// add exterior walls
 		for (int i = 0; i < 4; i++) {
+			System.out.println("Nailing wood for wall made out of " + wallMaterial);
 			house.addWall(new Wall(wallMaterial));
 		}
 		// add interior walls
 		for (int i = 0; i < numWalls - 4; i++) {
+			System.out.println("Nailing wood for interior wall made out of " + interiorWallMaterial);
 			house.addWall(new InteriorWall(interiorWallMaterial));
 		}
 		return this;
 	}
 	public HouseBuilder addWindows() {
 		for (int i = 0; i < numWindows; i++) {
+			System.out.println("Adding window made out of " + windowMaterial);
 			house.addWindow(new Window(windowMaterial));
 		}
 		return this;
@@ -33,5 +36,9 @@ public class WoodHouseBuilder extends HouseBuilder {
 	public HouseBuilder addRoof() {
 		house.addRoof(new Roof(roofMaterial));
 		return this;
+	}
+	public House build() {
+		System.out.println("Nail everything together");
+		return house;
 	}
 }

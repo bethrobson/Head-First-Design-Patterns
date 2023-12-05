@@ -2,28 +2,24 @@ package headfirst.designpatterns.prototype;
 
 public class Client {
 	public static void main(String[] args) {
-		Monster dragon = new Dragon("Dragon", false); // prototype for all Dragons
-		Monster drakon = new Drakon("Drakon", 2, true); // prototype for all Drakons
+		Prototype p1 = new ConcretePrototype1();
+		Prototype p2 = new ConcretePrototype2();
 		
-		Monster ladon = makeMonsterOperation(dragon, "Ladon");
-		Monster laconian = makeMonsterOperation(drakon, "Laconian");
-		
-		System.out.println(ladon);
-		ladon.spitPoison();
-		
-		System.out.println(laconian);
-		laconian.spitPoison();
+		// ... later ...
+		operation(p1);
+		operation(p2);
 	}
 	
-	public static Monster makeMonsterOperation(Monster monsterToCopy, String name) {
-		Monster newMonster = null;
+	public static Prototype operation(Prototype p) {
+		// This code doesn't know or care what the concrete type of p is
+		Prototype pCopy = null;
 		try {
-			newMonster = monsterToCopy.copy();
-			newMonster.setName(name);
+			pCopy = p.copy();
+			// do something useful with pCopy
+			System.out.println("Operating with pCopy!");
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return newMonster;
+		return pCopy;
 	}
 }

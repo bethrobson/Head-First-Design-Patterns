@@ -30,4 +30,8 @@ public class StoneHouseBuilder extends HouseBuilder {
 		house.addRoof(new Roof(roofMaterial));
 		return this;
 	}
+	public House build() {
+		System.out.println("Stick everything together with mortar");
+		return house;
+	}
 }
