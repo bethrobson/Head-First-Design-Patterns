@@ -1,0 +1,85 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist
+tmp
+out-tsc
+out
+build
+classes
+Debug
+Release
+x64
+bin
+gen
+Obj
+target
+proguard
+
+
+# dependencies
+node_modules
+bower_components
+.sass-cache
+
+# IDEs and editors
+*.project
+*.classpath
+*.settings
+*.springBeans
+*.idea
+*.iml
+*.ipr
+*.iws
+*.c9
+*.launch
+*.sublime-workspace
+*.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+.sass-cache
+connect.lock
+coverage
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+local.properties
+typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj
+.tmp
+
+# Package Files #
+*.ear
+*.tar.gz
+*.rar
+*.cmd
+*.mvn
+*.gradle
+*.nupkg
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Spring Bootstrap artifacts
+dependency-reduced-pom.xml
+README.html
